@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Обновление заявки</title>
+    </head>
+    <body>
+        <div>
+            <a href="add_orders.html">Добавить заявку</a>
+            <a href="update_order.html">Изменить заявку</a>
+            <a href="get_orders.html">Отобразить заявки</a>
+            <a href="get_statistics.html">Статистика</a>
+        </div>
+        <form action="http://localhost:8000/api/v1/update" method="post">
+            <input required placeholder="номер заявки" type="id" name="id">
+            <input placeholder="описание проблемы" type="text" name="problem_description">
+            <input placeholder="мастер" type="text" name="master">
+            <input placeholder="комментарий" type="text" name="comment">
+            <select name="status" id="status">
+                <option></option>
+                <option>в ожидании</option>
+                <option>в работе</option>
+                <option>выполнено</option>
+            </select>
+            <input type="submit" value="Сохранить">
+        </form>
+    </body>
+</html>

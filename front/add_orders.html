@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Заявки</title>
+    </head>
+    <body>
+        <div>
+            <a href="add_orders.html">Добавить заявку</a>
+            <a href="update_order.html">Изменить заявку</a>
+            <a href="get_orders.html">Отобразить заявки</a>
+            <a href="get_statistics.html">Статистика</a>
+        </div>
+        <table>
+            <tr>
+                <th>Дата начала</th>
+                <th>Номер заявки</th>
+                <th>Оборудование</th>
+                <th>Тип проблемы</th>
+                <th>Описание</th>
+                <th>Клиент</th>
+                <th>Статус</th>
+            </tr>
+            <tr>
+                <td><input id="start_date" type="date"></td>
+                <td><input id="id" placeholder="Номер заявки"></td>
+                <td><input id="device" placeholder="Оборудование"></td>
+                <td><input id="problem_type" placeholder="Тип проблемы"></td>
+                <td><input id="problem_description" placeholder="Описание"></td>
+                <td><input id="client" placeholder="Клиент"></td>
+                <td><select id="status">
+                    <option>в ожидании</option>
+                    <option>в работе</option>
+                    <option>в выполнено</option>
+                    </select>
+                </td>
+                <td> <input id="save" value="Сохранить" type="button"></td>
+            </tr>
+            <script>
+                document.getElementById("save").onclick = async () => {
+                    let order = {
+                        start_date : document.getElementById("start_date").value,
+                        id : document.getElementById("id").value,
+                            device : document.getElementById("device").value,
+                            problem_type : document.getElementById("problem_type").value,
+                            problem_description : document.getElementById("problem_description").value,
+                            client : document.getElementById("client").value,
+                            status : document.getElementById("status").value };
+                        fetch("http://localhost:8000/api/v1/orders", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json"},
+                            body: JSON.stringify(order)
+                    });
+                };
+            </script>
+        </table>
+    </body>
+</html>
