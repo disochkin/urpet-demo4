@@ -19,7 +19,7 @@
 
 Запуск приложения:
 1) Клонировать репозиторий:
-   >> git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+   >> git clone https://github.com/disochkin/urpet-demo4.git
 2) Рекомендуется активировать виртуальное окружение 
    Перейти в каталог со скаченным приложением, запустить команды:
    python3 -m venv myenv
