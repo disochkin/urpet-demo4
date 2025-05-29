@@ -3,6 +3,7 @@ from typing import Optional
 from uuid import UUID
 from pydantic import BaseModel
 
+
 class CreateTaskModel(BaseModel):
     device: str
     problem_type: str
@@ -10,8 +11,9 @@ class CreateTaskModel(BaseModel):
     client: str
     comments: str
 
+
 class ReadTaskModel(BaseModel):
-    uuid : UUID
+    uuid: UUID
     register_datetime: datetime | None
     start_datetime: datetime | None
     end_datetime: datetime | None
@@ -22,6 +24,7 @@ class ReadTaskModel(BaseModel):
     master: str | None
     status: str | None
     comments: str | None
+
 
 class UpdateTaskModel(BaseModel):
     start_datetime: datetime | None

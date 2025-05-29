@@ -65,7 +65,6 @@ class TaskRepositoryDB:
             for task in tasks]
         return result
 
-
     def read_by_id(self, uuid: UUID) -> ReadTaskModel | None:
         with Session(self.__engine) as session:
             statement = select(Task).where(Task.uuid == uuid)
@@ -86,8 +85,6 @@ class TaskRepositoryDB:
             master=task.master,
             status=task.status,
             comments=task.comments)
-
-
 
 
 def init_data(task_repo: TaskRepositoryDB):
@@ -111,4 +108,4 @@ def init_data(task_repo: TaskRepositoryDB):
         problem_type="low toner",
         problem_description="black",
         client="Иванов",
-        comments="comment3"))    # endregion`
+        comments="comment3"))  # endregion`

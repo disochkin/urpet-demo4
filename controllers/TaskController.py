@@ -5,6 +5,7 @@ from storage.InitData import init_data
 from models.TaskModel import CreateTaskModel, UpdateTaskModel
 from storage.TaskRepositoryDB import TaskRepositoryDB
 
+
 class TaskController(Controller):
     task_repo = TaskRepositoryDB()
 
@@ -34,7 +35,7 @@ class TaskController(Controller):
         return f"Задача c {uuid} успешно создана"
 
     @put("/update/task/{uuid}")
-    def update_task(self, uuid : UUID, update_task : UpdateTaskModel):
+    def update_task(self, uuid: UUID, update_task: UpdateTaskModel):
         try:
             self.task_repo.update_task(uuid, update_task)
             return f"Задача c {uuid} успешно обновлена"
@@ -42,10 +43,9 @@ class TaskController(Controller):
             return e
 
     @delete("/tasks/{uuid}")
-    def delete_user(self, uuid : UUID):
+    def delete_user(self, uuid: UUID):
         try:
             self.task_repo.delete(uuid)
             return "Задача успешно удалена"
         except Exception as e:
             return str(e)
-

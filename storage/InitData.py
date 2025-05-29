@@ -2,8 +2,7 @@ from models.TaskModel import CreateTaskModel
 from storage.Repository import TaskRepository
 
 
-def init_data(user_repo : TaskRepository):
-
+def init_data(user_repo: TaskRepository):
     user_repo.createTask(CreateTaskModel(
         device="printer",
         problem_type="error",
