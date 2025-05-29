@@ -48,6 +48,3 @@ class Task(SQLModel, table=True):
         else:
             raise f'Задачу в состоянии {self.status} нельзя завершить.'
 
-    # @uuid.setter
-    # def uuid(self, value):
-    #     self._uuid = value

@@ -20,29 +20,8 @@ class TaskRepository:
         self.__tasks.append(task)
         return task.uuid
 
-    # def read(self,
-    #          search_value: str | None,
-    #          filter_value: str | None,
-    #          sort_field: str | None,
-    #          sort_type: int | None,
-    #          page_size: int | None,
-    #          page_num: int | None) -> list[ReadOrderModel]:
-    #     """Этот метод мне нужен"""
-    #     b0 = [ReadUserModel(
-    #         id=user.id,
-    #         email=user.email,
-    #         name=user.name,
-    #         surname=user.surname,
-    #         birthdate=user.birthdate,
-    #         age=user.age,
-    #         gender=user.gender)
-    #         for user in self.__users]
-    #     b1 = search(b0, search_value)
-    #     b2 = gender_filter(b1, filter_value)
-    #     b3 = sort(b2, sort_field, sort_type)
-    #     b4 = pagination(b3, page_size, page_num)
-    #     return b4
-    #
+
+
     def read_by_id(self, uuid: UUID) -> ReadTaskModel | None:
         for task in self.__tasks:
             if (task.uuid == uuid):
